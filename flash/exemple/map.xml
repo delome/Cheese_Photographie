@@ -1,0 +1,145 @@
+<map>
+
+	<option version="42">
+		<conf id="1"/>
+		<conf id="2"/>
+	</option>
+
+
+	<grid>
+		<tr>
+			<td num="1" mur="1"/>
+			<td num="2" mur="1"/>
+			<td num="3" mur="0"/>
+            <td num="4" mur="0"/>
+            <td num="5" mur="0"/>
+            <td num="6" mur="0"/>
+			<td num="7" mur="0"/>
+            <td num="8" mur="0"/>
+            <td num="9" mur="0"/>
+		</tr>
+		<tr>
+            <td num="10" mur="1"/>
+            <td num="11" mur="0"/>
+            <td num="12" mur="0"/>
+			<td num="13" mur="1"/>
+			<td num="14" mur="0"/>
+			<td num="15" mur="0"/>
+			<td num="16" mur="1"/>
+			<td num="17" mur="0"/>
+			<td num="18" mur="0"/>
+		</tr>
+        <tr>
+            <td num="19" mur="1"/>
+            <td num="20" mur="0"/>
+            <td num="21" mur="0"/>
+            <td num="22" mur="1"/>
+            <td num="23" mur="0"/>
+            <td num="24" mur="0"/>
+			<td num="25" mur="1"/>
+            <td num="26" mur="0"/>
+            <td num="27" mur="0"/>
+        </tr>
+        <tr>
+            <td num="28" mur="0" perso="1"/>
+            <td num="29" mur="0"/>
+            <td num="30" mur="0"/>
+            <td num="31" mur="1"/>
+            <td num="32" mur="1"/>
+            <td num="33" mur="0"/>
+			<td num="34" mur="1"/>
+            <td num="35" mur="1"/>
+            <td num="36" mur="0"/>
+        </tr>
+        <tr>
+            <td num="37" mur="1"/>
+            <td num="38" mur="0"/>
+            <td num="39" mur="0"/>
+            <td num="40" mur="0"/>
+            <td num="41" mur="0"/>
+            <td num="42" mur="0"/>
+			<td num="43" mur="0"/>
+            <td num="44" mur="0"/>
+            <td num="45" mur="0"/>
+        </tr>
+        <tr>
+            <td num="46" mur="1"/>
+            <td num="47" mur="1"/>
+            <td num="48" mur="1"/>
+            <td num="49" mur="1"/>
+            <td num="50" mur="1"/>
+            <td num="51" mur="0"/>
+			<td num="52" mur="1"/>
+            <td num="53" mur="1"/>
+            <td num="54" mur="0"/>
+        </tr>
+		<tr>
+            <td num="55" mur="1"/>
+            <td num="56" mur="1"/>
+            <td num="57" mur="1"/>
+            <td num="58" mur="1"/>
+            <td num="59" mur="1"/>
+            <td num="60" mur="0"/>
+			<td num="61" mur="1"/>
+            <td num="62" mur="1"/>
+            <td num="63" mur="0"/>
+		</tr>
+		<tr>
+            <td num="64" mur="0"/>
+            <td num="65" mur="0"/>
+            <td num="66" mur="0"/>
+            <td num="67" mur="0"/>
+            <td num="68" mur="0"/>
+            <td num="69" mur="0"/>
+			<td num="70" mur="0"/>
+            <td num="71" mur="0"/>
+            <td num="72" mur="0"/>
+        </tr>
+		<tr>
+            <td num="73" mur="1"/>
+            <td num="74" mur="0"/>
+            <td num="75" mur="0"/>
+            <td num="76" mur="0"/>
+            <td num="77" mur="0"/>
+            <td num="78" mur="0"/>
+			<td num="79" mur="0"/>
+            <td num="80" mur="0"/>
+            <td num="81" mur="0"/>
+        </tr>
+        <tr>
+            <td num="82" mur="1"/>
+            <td num="83" mur="1"/>
+            <td num="84" mur="0"/>
+            <td num="85" mur="0"/>
+            <td num="86" mur="1"/>
+            <td num="87" mur="0"/>
+			<td num="88" mur="0"/>
+            <td num="89" mur="1"/>
+            <td num="90" mur="0"/>
+        </tr>
+		<tr>
+			<td num="91" mur="0"/>
+            <td num="92" mur="1"/>
+            <td num="93" mur="0"/>
+            <td num="94" mur="0"/>
+            <td num="95" mur="0"/>
+            <td num="96" mur="0"/>
+            <td num="97" mur="0"/>
+			<td num="98" mur="0"/>
+            <td num="99" mur="0"/>
+		</tr>
+		<tr>
+            <td num="100" mur="1"/>
+            <td num="101" mur="1"/>
+            <td num="102" mur="1"/>
+            <td num="103" mur="0"/>
+            <td num="104" mur="0"/>
+            <td num="105" mur="1"/>
+			<td num="106" mur="1"/>
+            <td num="107" mur="0"/>
+            <td num="108" mur="0"/>
+        </tr>
+		
+	</grid>
+
+</map>

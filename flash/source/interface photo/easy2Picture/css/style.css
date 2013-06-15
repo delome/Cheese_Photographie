@@ -1,0 +1,78 @@
+/* Générale */
+body{
+	background-color:black;	
+	margin-left:auto;
+	margin-right:auto;
+	width:80%;
+}
+h1 {
+	font-weight:bold;
+	font-size:20pt;	
+	color: white;	
+	font-family:Calibri;
+	text-align:center;
+	margin-bottom:50px;
+}
+h2 {
+	font-style:italic;
+	text-decoration:underline;
+	font-size:13pt;
+	color: white;
+	font-family:Calibri;
+	font-weight:normal;
+}
+p {
+	font-size:13pt;
+	color: white;	
+	font-family:Calibri;
+}
+a {
+	color:white;
+	fontweight:normal;
+	text-decoration:none;	
+	font-family:Calibri;
+	font-size:13pt;
+}
+a:hover {
+	color:#2d71ee;
+}
+#banniere img{
+	width:80%;
+	margin-bottom:10px;
+	border:none;
+}
+#banniere a {
+	
+}
+
+/* Pied de page */
+#pied {
+	margin-top:10px;
+}
+#pied a, #pied p {
+	font-size:9pt;	
+	text-align:left;
+}
+
+
+/* Page A propos */
+#aPropos{
+	text-align:center;	
+}
+
+
+/* page Conditions d'utilisation */
+#conditions p{
+	text-align:justify;	
+	text-indent:35px;
+}
+
+
+/* Page Accueil(application) */
+#application {
+	background-color:black;
+	width:800px;
+	height:600px;
+	margin-left:auto;
+	margin-right:auto;
+}
