@@ -10,7 +10,7 @@ import flash.geom.Rectangle;
 //_________________________________________○○○--Variable instanciés
 var taille:String = "0.05";
 var loader:Loader = new Loader();
-var url:URLRequest = new URLRequest("IMG_3198.jpg");
+var url:URLRequest = new URLRequest("../exploit/img/photos/IMG_3198.jpg");
 var image:MovieClip = new MovieClip();
 var centreX:Number=-50;
 var centreY:Number=-50;
@@ -73,7 +73,7 @@ function click_declencheur(e:Event):void{
 		MovieClip(racine).adresse = new URLRequest("affichage_photo_01.swf");
      	MovieClip(racine).chargeur.load(MovieClip(racine).adresse);	  	
 	 	//MovieClip(racine).reloader(e);
-		MovieClip(racine).boutons = false;			
+		MovieClip(racine).boutons = false;		
 }
 declencheur.addEventListener(MouseEvent.CLICK,click_declencheur);
 

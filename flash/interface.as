@@ -65,11 +65,21 @@ function chargementTermine (evt:Event) {
 	TweenLite.to(chargement, 1, {y:-800});
 	if(boutons==true) {
 	//déffinition des plans
+		btn_menu.visible = true;
+		zone_menu1.visible = true;
+		btn_sac.visible = true;
 		setChildIndex(btn_menu,this.numChildren-1);
 		setChildIndex(zone_menu1, this.numChildren-1);
 		setChildIndex(btn_sac, this.numChildren-1);
 		setChildIndex(chargement,this.numChildren-1);
 		}
+	else {
+	//déffinition des plans
+		btn_menu.visible = false;
+		zone_menu1.visible = false;
+		btn_sac.visible = false;
+		}
+	
 	//remise à zero du chargeur//
 	 pct=0;
 	 total = 0;
