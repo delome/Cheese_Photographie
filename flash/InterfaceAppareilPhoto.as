@@ -1,4 +1,4 @@
-﻿import flash.display.*;
+﻿﻿import flash.display.*;
 import flash.events.*;
 import com.greensock.easing.*;
 import com.greensock.TweenMax;
@@ -56,10 +56,12 @@ stage.addEventListener(MouseEvent.MOUSE_UP,noDragg);
 function click_declencheur(e:Event):void{
 	trace ("photo");	
 	var racine = root.parent.root;
+	masque.gotoAndStop (2);
 	//On désactive les autres éléments
 	ligne_cadrage.visible = false;
-	btn_zoom_plus.visible = false;
-	btn_zoom_moins.visible = false;
+	appareil.btn_zoom_plus.visible = false;
+	appareil.btn_zoom_moins.visible = false;
+	appareil.visible = false;
 	declencheur.visible = false;
 	
 	//On fait le flash
@@ -67,7 +69,7 @@ function click_declencheur(e:Event):void{
 	
 	//On crée l'image
 	//var imagefinale;
-	MovieClip(racine).maCapture1.draw(this,null,null,null,new Rectangle(118,97,788,571));
+	MovieClip(racine).maCapture1.draw(this,null,null,null,new Rectangle(198,124,854,618));
 		image.removeEventListener(MouseEvent.MOUSE_DOWN,dragg);
 	//affichage photo ///
 		MovieClip(racine).adresse = new URLRequest("affichage_photo_01.swf");
@@ -83,10 +85,10 @@ function zoom(e:MouseEvent):void{
    TweenMax.to(image,0.2,{scaleX:taille, ease:Sine.easeOut});
    TweenMax.to(image,0.2,{scaleY:taille, ease:Sine.easeOut});
 }
-btn_zoom_plus.addEventListener(MouseEvent.MOUSE_DOWN, zoom);
+appareil.btn_zoom_plus.addEventListener(MouseEvent.MOUSE_DOWN, zoom);
 function dezoom(e:MouseEvent):void{
    TweenMax.to(image,0.1,{scaleX:0.18, ease:Sine.easeOut});
    TweenMax.to(image,0.1,{scaleY:0.18, ease:Sine.easeOut});
    TweenMax.to(image,0.1,{x:100, y:100, ease:Sine.easeIn});
 }
-btn_zoom_moins.addEventListener(MouseEvent.MOUSE_DOWN, dezoom);
+appareil.btn_zoom_moins.addEventListener(MouseEvent.MOUSE_DOWN, dezoom);
