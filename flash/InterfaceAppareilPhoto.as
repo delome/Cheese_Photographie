@@ -12,7 +12,6 @@ var taille:String = "0.05";
 var loader:Loader = new Loader();
 var url:URLRequest = new URLRequest("IMG_3198.jpg");
 var image:MovieClip = new MovieClip();
-var flash_lumiere:MovieClip = new MovieClip();
 var centreX:Number=-50;
 var centreY:Number=-50;
 
@@ -58,22 +57,23 @@ function click_declencheur(e:Event):void{
 	trace ("photo");	
 	var racine = root.parent.root;
 	//On désactive les autres éléments
-	//ligne_cadrage.visible = false;
-	//btn_zoom_plus.visible = false;
-	//btn_zoom_moins.visible = false;
+	ligne_cadrage.visible = false;
+	btn_zoom_plus.visible = false;
+	btn_zoom_moins.visible = false;
+	declencheur.visible = false;
 	
 	//On fait le flash
 	//addChild(flash_lumiere);
 	
 	//On crée l'image
 	//var imagefinale;
-	MovieClip(racine).maCapture1.draw(this,null,null,null,new Rectangle(55,35,789,571));
-	var bmp:Bitmap = new  Bitmap(MovieClip(racine).maCapture1);
-	//imagefinale.x = 0;
-	//imagefinale.y = 0;
-	addChild(bmp);
-	image.removeEventListener(MouseEvent.MOUSE_DOWN,dragg);
-	
+	MovieClip(racine).maCapture1.draw(this,null,null,null,new Rectangle(118,97,788,571));
+		image.removeEventListener(MouseEvent.MOUSE_DOWN,dragg);
+	//affichage photo ///
+		MovieClip(racine).adresse = new URLRequest("affichage_photo_01.swf");
+     	MovieClip(racine).chargeur.load(MovieClip(racine).adresse);	  	
+	 	//MovieClip(racine).reloader(e);
+		MovieClip(racine).boutons = false;			
 }
 declencheur.addEventListener(MouseEvent.CLICK,click_declencheur);
 

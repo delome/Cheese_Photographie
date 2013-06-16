@@ -1,9 +1,0 @@
-AS3 source for the transition cheat sheet can be found at Tweener's subversion server.
-
-For more information:
-http://code.google.com/p/tweener/source
-
-Or direct download:
-http://tweener.googlecode.com/svn/trunk/examples/
-
-Then look for variants of "transitionSheet_as3_cs3.zip".
