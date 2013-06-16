@@ -16,8 +16,8 @@ import com.greensock.easing.*;
 	var posDevantX = "-770,20";
 	var posDevantY = "174,05";
 	
-	var 
-
+//initialisation variable Ilage//////////////////////////////////////////////////
+var maCapture1:BitmapData = new BitmapData(789,571);
 //////////////////////////////////////////////////////////////////////////////////
 //thème de musical////////////////////////////////////////////////////////////////
 	var theme1:SoundChannel;
@@ -175,25 +175,7 @@ function fermeture_sac(evt:MouseEvent) {
 
 ///////////////////////////////////
 ///////////////////////////////////
-///////////////////////////////////
-// Interface photo ///////////////
-//////////////////////////////////
-var int_photo:Loader = new Loader();
-var adresse_int_photo:URLRequest = new URLRequest("interface_photo.swf");
-int_photo.load(adresse_int_photo);
-trace('interface_photo_chargé');
 
-function afficher_interfacePhoto (e)
-{
-	addChild(int_photo);
-	trace('interface_photo_affiché');
-}  
-function supprimer_interfacePhoto (e)
-{
-	removeChild(int_photo);
-	trace('interface_photo_supprimé');
-} 
-/////////////////////////////////////////////////
 
 ///////////////////////////////////////////
 ///////////curseur souris//////////////

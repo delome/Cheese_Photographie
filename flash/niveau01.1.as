@@ -76,14 +76,29 @@ function niveau_suivant(e) {
 	if(MovieClip(player.content).player.zone_i.hitTestObject(derriere.btn_prise_1)) {
 		  TweenLite.to(derriere.btn_prise_1, 0.3, {scaleX:2, scaleY:2, alpha:0.7, ease:Bounce.easeOut});
 		  derriere.btn_prise_1.btn.buttonMode = true;		
-		  derriere.btn_prise_1.btn.addEventListener(MouseEvent.CLICK, MovieClip(racine).afficher_interfacePhoto);
+		  derriere.btn_prise_1.btn.addEventListener(MouseEvent.CLICK, afficher_interfacePhoto);
 	}
 	else {
 		 TweenLite.to(derriere.btn_prise_1, 0.3, {scaleX:1, scaleY:1, alpha:0.4, ease:Bounce.easeOut});
 		 derriere.btn_prise_1.btn.buttonMode = false; 
-		 derriere.btn_prise_1.btn.removeEventListener(MouseEvent.CLICK, MovieClip(racine).afficher_interfacePhoto);
+		 derriere.btn_prise_1.btn.removeEventListener(MouseEvent.CLICK, afficher_interfacePhoto);
 	}	
 }
+
+///////////////////////////////////
+// Interface photo ///////////////
+//////////////////////////////////
+
+function afficher_interfacePhoto (e)
+{
+		derriere.suiv.y = 1194;
+		MovieClip(racine).chargement.y=0;
+		MovieClip(racine).adresse = new URLRequest("interface_photo.swf");
+     	MovieClip(racine).chargeur.load(MovieClip(racine).adresse);	  	
+	 	MovieClip(racine).reloader(e);
+		MovieClip(racine).boutons = false;		
+}  
+/////////////////////////////////////////////////
 //saveXmlHandler (player);
 ////////////////////////////////////////////////////
 /* test save XML ///////////////
