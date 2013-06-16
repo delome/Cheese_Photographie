@@ -14,6 +14,8 @@ function choixSexF(e) {
 	  trace("clique fille");
 	  btn_homme.alpha = 0.2;
 	  btn_femme.alpha = 1;
+	  btn_homme.tete.alpha = 0;
+	  btn_femme.tete.alpha = 1;
 	  enregister("F");
 	  btn_suivant.alpha = 1;
 	  btn_suivant.addEventListener(MouseEvent.MOUSE_DOWN,suivant_new);	 
@@ -23,6 +25,8 @@ function choixSexM(e) {
 	  trace("clique garçon");
 	  btn_homme.alpha = 1;
 	  btn_femme.alpha = 0.2;
+	  btn_homme.tete.alpha = 1;
+	  btn_femme.tete.alpha = 0;
 	  enregister("M");
 	  btn_suivant.alpha = 1;
 	  btn_suivant.addEventListener(MouseEvent.MOUSE_DOWN,suivant_new);
