@@ -69,7 +69,7 @@ function click_declencheur(e:Event):void{
 	
 	//On crée l'image
 	//var imagefinale;
-	MovieClip(racine).maCapture1.draw(this,null,null,null,new Rectangle(198,124,854,618));
+	MovieClip(racine).maCapture1.draw(this,null,null,null,new Rectangle(186,137,837,630));
 		image.removeEventListener(MouseEvent.MOUSE_DOWN,dragg);
 	//affichage photo ///
 		MovieClip(racine).adresse = new URLRequest("affichage_photo_01.swf");

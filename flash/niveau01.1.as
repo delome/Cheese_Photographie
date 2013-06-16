@@ -68,7 +68,9 @@ function niveau_suivant(e) {
 		MovieClip(racine).chargement.y=0;
 		MovieClip(racine).adresse = new URLRequest("niveau01.2.swf");
      	MovieClip(racine).chargeur.load(MovieClip(racine).adresse);	  	
-	 	MovieClip(racine).reloader(e);				
+	 	MovieClip(racine).reloader(e);	
+		stage.removeEventListener(Event.ENTER_FRAME, Deplacement_fond);
+		stage.removeEventListener(Event.ENTER_FRAME, niveau_suivant);
 	}
 	else{
 		
@@ -97,6 +99,8 @@ function afficher_interfacePhoto (e)
      	MovieClip(racine).chargeur.load(MovieClip(racine).adresse);	  	
 	 	MovieClip(racine).reloader(e);
 		MovieClip(racine).boutons = false;		
+		stage.removeEventListener(Event.ENTER_FRAME, Deplacement_fond);
+		stage.removeEventListener(Event.ENTER_FRAME, niveau_suivant);
 }  
 /////////////////////////////////////////////////
 //saveXmlHandler (player);
