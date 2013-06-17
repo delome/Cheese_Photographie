@@ -10,11 +10,12 @@ import com.greensock.easing.*;
 	conteneurSaveXML.addEventListener(IOErrorEvent.IO_ERROR, onFileSaveError);	
 //////////////////////////////////////////////////////////////////////////////////
 //initialisation variable niveau//////////////////////////////////////////////////
-	//position du niveau
-	var posFondX = "-785,10";
-	var posFondY = "-145,85";
-	var posDevantX = "-770,20";
-	var posDevantY = "174,05";
+	var posFondX =-785.10;
+	var posFondY =-145.85;
+	var posDevantX =-770.2;
+	var posDevantY =-144.65;
+	var posPlayerX =475;
+	var posPlayerY =391;
 	
 //initialisation variable Ilage//////////////////////////////////////////////////
 var maCapture1:BitmapData = new BitmapData(1024,768);

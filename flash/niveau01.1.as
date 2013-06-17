@@ -11,16 +11,12 @@ var adresseFichier = ("perso/personnage_fille.swf");
 conteneurXML.addEventListener(Event.COMPLETE,chargementXMLTermine);
 conteneurXML.addEventListener(IOErrorEvent.IO_ERROR, onFileError);
 
-//var posx = MovieClip(racine).posFondX;
-//var posy = MovieClip(racine).posFondY;
-//trace(posx);
-//trace(posy);
-//derriere.X=MovieClip(racine).posFondX;
-//derriere.Y=MovieClip(racine).posFondY;
-//derriere.X="-785,10";
-//derriere.Y="-145,85";
-//devant.X=MovieClip(racine).posDevantX;
-//devant.Y=MovieClip(racine).posDevantY;
+var racine = root.parent.root;
+
+derriere.x=MovieClip(racine).posFondX;
+derriere.y=MovieClip(racine).posFondY;
+devant.x=MovieClip(racine).posDevantX;
+devant.y=MovieClip(racine).posDevantY;
 
 function chargementXMLTermine(pEvt:Event):void  {
  	arboXML = new XML(conteneurXML.data);  
@@ -50,8 +46,8 @@ function charger_perso() {
 	player.load(adressePerso);
 	addChild(player);
 	//placement du personnage //
-	player.y=391;
-	player.x=475;
+	player.x=MovieClip(racine).posPlayerX;
+	player.y=MovieClip(racine).posPlayerY;
 	setChildIndex(devant,this.numChildren-1);
 	/////////////////////////////////////////////////////////////////////////////////
 	stage.addEventListener(Event.ENTER_FRAME, Deplacement_fond);//fonction dans main
@@ -69,8 +65,12 @@ function niveau_suivant(e) {
 		MovieClip(racine).adresse = new URLRequest("niveau01.2.swf");
      	MovieClip(racine).chargeur.load(MovieClip(racine).adresse);	  	
 	 	MovieClip(racine).reloader(e);	
-		stage.removeEventListener(Event.ENTER_FRAME, Deplacement_fond);
-		stage.removeEventListener(Event.ENTER_FRAME, niveau_suivant);
+		//stage.removeEventListener(Event.ENTER_FRAME, Deplacement_fond);
+		//stage.removeEventListener(Event.ENTER_FRAME, niveau_suivant);
+		MovieClip(racine).posFondX=2527.55;				
+		MovieClip(racine).posFondY=300.75;
+		MovieClip(racine).posPlayerX=450;
+		MovieClip(racine).posPlayerY=360;
 	}
 	else{
 		

@@ -8,10 +8,10 @@ import flash.utils.*;
 import flash.geom.Rectangle;
 	
 //_________________________________________○○○--Variable instanciés
-var taille:String = "0.05";
-var loader:Loader = new Loader();
-var url:URLRequest = new URLRequest("../exploit/img/photos/IMG_3198.jpg");
-var image:MovieClip = new MovieClip();
+var taille:String = "0.1";
+//var loader:Loader = new Loader();
+//var url:URLRequest = new URLRequest("../exploit/img/photos/photo01.jpg");
+//var image:MovieClip = new MovieClip();
 var centreX:Number=-50;
 var centreY:Number=-50;
 
@@ -26,17 +26,17 @@ InterfaceAppareilPhoto();
 
 function InterfaceAppareilPhoto() {
 	// constructor code
-	loader.load(url);
-	addChild(image);
-	image.addChild(loader);
+	//loader.load(url);
+	//addChild(image);
+	//image.addChild(loader);
 	setChildIndex(ligne_cadrage,this.numChildren-1);
 	var imgX:int=(stage.stageWidth-image.width)/2;
 	var imgY:int=(stage.stageHeight-image.height)/2;
 	trace(imgX);
-	image.y=98;
-	image.x=100;
-	image.scaleX=0.18;
-	image.scaleY=0.18;	
+	//image.y=98;
+	//image.x=100;
+	//image.scaleX=0.2;
+	//image.scaleY=0.2;	
 }
 
 //---------------------------------------------○○○--Drag
@@ -87,8 +87,8 @@ function zoom(e:MouseEvent):void{
 }
 appareil.btn_zoom_plus.addEventListener(MouseEvent.MOUSE_DOWN, zoom);
 function dezoom(e:MouseEvent):void{
-   TweenMax.to(image,0.1,{scaleX:0.18, ease:Sine.easeOut});
-   TweenMax.to(image,0.1,{scaleY:0.18, ease:Sine.easeOut});
-   TweenMax.to(image,0.1,{x:100, y:100, ease:Sine.easeIn});
+   TweenMax.to(image,0.1,{scaleX:0.25, ease:Sine.easeOut});
+   TweenMax.to(image,0.1,{scaleY:0.25, ease:Sine.easeOut});
+   TweenMax.to(image,0.1,{x:543, y:312, ease:Sine.easeIn});
 }
 appareil.btn_zoom_moins.addEventListener(MouseEvent.MOUSE_DOWN, dezoom);

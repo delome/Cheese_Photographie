@@ -33,4 +33,8 @@ function niveau012(e) {
 	MovieClip(racine).adresse = new URLRequest("niveau01.2.swf");
 	MovieClip(racine).chargeur.load(MovieClip(racine).adresse);	  	
 	MovieClip(racine).reloader(e);
+	MovieClip(racine).posFondX=99.55;				
+	MovieClip(racine).posFondY=300.75;
+	MovieClip(racine).posPlayerX=450;
+	MovieClip(racine).posPlayerY=360;
 }

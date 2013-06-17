@@ -7,7 +7,7 @@ import flash.events.KeyboardEvent;
 ///////////////////////////
 var vitesse:Number = 10;
 var musique = false;
-var racine = root.parent.root;
+//var racine = root.parent.root;
 var piste1:SoundChannel;
  
 // événements

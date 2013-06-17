@@ -10,6 +10,12 @@ var arboXML:XML;
 var adresseFichier = ("perso/personnage_fille.swf");
 conteneurXML.addEventListener(Event.COMPLETE,chargementXMLTermine);
 conteneurXML.addEventListener(IOErrorEvent.IO_ERROR, onFileError);
+
+var racine = root.parent.root;
+
+derriere.x=MovieClip(racine).posFondX;
+derriere.y=MovieClip(racine).posFondY;
+
 function chargementXMLTermine(pEvt:Event):void  {
  	arboXML = new XML(conteneurXML.data);  
    	trace ("Chargement XML OK");
@@ -63,8 +69,8 @@ function charger_perso() {
 	player.load(adressePerso);
 	addChild(player);
 	//placement du personnage //
-	player.y=351;
-	player.x=500;
+	player.x=MovieClip(racine).posPlayerX;
+	player.y=MovieClip(racine).posPlayerY;
 	setChildIndex(devant,this.numChildren-1);	
 	stage.addEventListener(Event.ENTER_FRAME, Deplacement_fond);//fonction dans main
 	stage.addEventListener(Event.ENTER_FRAME, niveau_suivant);//evenements specifique au niveau
@@ -139,6 +145,12 @@ function niveau011(e) {
 	MovieClip(racine).adresse = new URLRequest("niveau01.1.swf");
 	MovieClip(racine).chargeur.load(MovieClip(racine).adresse);	  	
 	MovieClip(racine).reloader(e);
+	MovieClip(racine).posFondX=-2610;				
+	MovieClip(racine).posFondY=-145.85;
+	MovieClip(racine).posDevantX=-2600;
+	MovieClip(racine).posDevantY=-144.65;
+	MovieClip(racine).posPlayerX=500;
+	MovieClip(racine).posPlayerY=391;
 }
 
 
