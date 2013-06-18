@@ -1,5 +1,13 @@
 ﻿stop();
 var racine = root.parent.root;
+
+bulle.alpha = 0;
+
+txt_pupitre.text = MovieClip(racine).replace(MovieClip(racine).DialoguesXML.PerfectPhoto.Comptoir,'\n','');
+bulle.txt_bulle.text = MovieClip(racine).DialoguesXML.PerfectPhoto.Bulle;
+caisse.buttonMode = true;
+retour.buttonMode = true;
+
 stage.addEventListener(KeyboardEvent.KEY_DOWN,deplacement);
 caisse.addEventListener(MouseEvent.CLICK,anim_caisse);
 retour.addEventListener(MouseEvent.CLICK,niveau012);
@@ -25,8 +33,9 @@ function deplacement (evt:KeyboardEvent):void
 }
 function anim_caisse(event){
 	gotoAndStop("pointer");
-	
+	bulle.alpha = 1;
 }
+
 function niveau012(e) {
 	MovieClip(racine).boutons = true;
 	MovieClip(racine).chargement.y=0;

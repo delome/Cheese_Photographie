@@ -1,20 +1,43 @@
 ﻿//////////////////////////
-//niveau 1////////////////
+//niveau 1.3//////////////
 //////////////////////////
-var racine = root.parent.root
+
+// Importation
+import com.greensock.*;
+import com.greensock.easing.*;
+import flash.ui.Keyboard;
+import flash.events.Event;
+import flash.events.KeyboardEvent;
 
 //initialisation XML//////////////////////////////////////////////////////////
-var adresseFichierXML:URLRequest = new URLRequest("xml/niveau01.xml");
+var adresseFichierXML:URLRequest = new URLRequest("xml/personnages.xml");
 var conteneurXML:URLLoader = new URLLoader();
 conteneurXML.load(adresseFichierXML);
 var arboXML:XML;
-var adresseFichier = ("perso/personnage_default.swf");
+var adresseFichier = ("perso/personnage_fille.swf");
 conteneurXML.addEventListener(Event.COMPLETE,chargementXMLTermine);
 conteneurXML.addEventListener(IOErrorEvent.IO_ERROR, onFileError);
+
+var racine = root.parent.root;
+
+//btn_new.txt_btn_nouvellePartie.text = MovieClip(racine).DialoguesXML.Niveau1.Gare;
+//btn_retour.txt_retour.text = MovieClip(racine).DialoguesXML.Gen.BtnRetour;
+
+
 function chargementXMLTermine(pEvt:Event):void  {
  	arboXML = new XML(conteneurXML.data);  
    	trace ("Chargement XML OK");
-	adresseFichier = arboXML.personnage[0].nom; 
+	var sex = MovieClip(racine).SaveXML.Personnage[0].Type[0];
+	trace (sex);
+	if (sex=="F"){
+		adresseFichier = arboXML.personnage[0].nom; 
+		   trace (sex+"fémi");
+	}else{
+		adresseFichier = arboXML.personnage[1].nom; 
+		   trace (sex+"maki");
+		  
+		
+	}
 	trace (adresseFichier);
 	charger_perso();
 }
@@ -25,44 +48,33 @@ function onFileError(evt:IOErrorEvent){
 ////////////////////////////
 //Personnage ///////////////
 ///////////////////////////
-var player:Loader = new Loader();
+var player2:Loader = new Loader();
 function charger_perso() {		
 	var adressePerso:URLRequest = new URLRequest(adresseFichier);
-	player.load(adressePerso);
-	addChild(player);
+	player2.load(adressePerso);
+	addChild(player2);
 	//placement du personnage //
-	player.y=480;
-	player.x=120;
+	player2.x=MovieClip(racine).posPlayerX;
+	player2.y=MovieClip(racine).posPlayerY;
 	setChildIndex(devant,this.numChildren-1);
-	/////////////////////////////////////////////////////////////////////////////////
-	stage.addEventListener(Event.ENTER_FRAME, Deplacement_fond);//fonction dans main
-	stage.addEventListener(Event.ENTER_FRAME, niveau_suivant);//evenements specifique au niveau
 }
 /////////////////////////////////////////////////////////////
 //Function niveau ///////////////////////////
-function niveau_suivant(e) {
-	if (MovieClip(player.content).player.hit_box.hitTestObject(derriere.suiv)) {					
-		/*MovieClip(racine).adresse = new URLRequest("niveau01.2.swf");
-	 	MovieClip(racine).boutons = true;		
-		removeChild(chargeur);*/		
-		derriere.suiv.y = 1194;
-		MovieClip(racine).chargement.y=0;
-		MovieClip(racine).adresse = new URLRequest("niveau01.2.swf");
-     	//MovieClip(racine).chargeur.load(MovieClip(racine).adresse);	  	
-	 	MovieClip(racine).reloader(e);				
-	}
-	else{
-		
-		}
-	if(MovieClip(player.content).player.zone_i.hitTestObject(derriere.btn_prise_1)) {
-		  TweenLite.to(derriere.btn_prise_1, 0.3, {scaleX:2, scaleY:2, alpha:0.7, ease:Bounce.easeOut});
-		  derriere.btn_prise_1.buttonMode = true;		
-	}
-	else {
-		 TweenLite.to(derriere.btn_prise_1, 0.3, {scaleX:1, scaleY:1, alpha:0.4, ease:Bounce.easeOut});
-		 derriere.btn_prise_1.buttonMode = false;		 
-	}	
+function niveau_retour(evt:MouseEvent) {
+	MovieClip(racine).adresse = new URLRequest("niveau01.2.swf");
+	MovieClip(racine).chargeur.load(MovieClip(racine).adresse);
+	MovieClip(racine).chargement.y=0;
+	MovieClip(racine).boutons = true;
+	MovieClip(racine).reloader(evt);
+	MovieClip(racine).posFondX=-305;				
+	MovieClip(racine).posFondY=300.75;
+	MovieClip(racine).posPlayerX=700;
+	MovieClip(racine).posPlayerY=360;
+	trace ("retour ok"+MovieClip(racine).posFondX);
+	//stage.removeEventListener(Event.ENTER_FRAME, Deplacement_fond);
+	//stage.removeEventListener(Event.ENTER_FRAME, niveau_retour);
 }
+
 ////////////////////////////////////////////////////
 // test save XML ///////////////
 /*////////////////////////////////*

@@ -37,29 +37,7 @@ function onFileError(evt:IOErrorEvent){
 	trace(this, evt);
 	 trace ("Chargement XML pas Ok");
 }
-/////////////////////////////////////////////////////////////
-//Function niveau ///////////////////////////
-/////////////////////////////////////////////////////////////
-function niveau_suivant(e) {
-	if (MovieClip(player.content).player.hit_box.hitTestObject(derriere.suiv)) {						
-		derriere.suiv.y = 1194;
-		MovieClip(racine).chargement.y=0;
-		MovieClip(racine).adresse = new URLRequest("niveau01.3.swf");
-     	MovieClip(racine).chargeur.load(MovieClip(racine).adresse);  	
-	 	MovieClip(racine).reloader(e);				
-	}
-	else{
-		
-		}
-	if(MovieClip(player.content).player.zone_i.hitTestObject(derriere.btn_prise_1)) {
-		  TweenLite.to(derriere.btn_prise_1, 0.3, {scaleX:2, scaleY:2, alpha:0.7, ease:Bounce.easeOut});
-		  derriere.btn_prise_1.buttonMode = true;		
-	}
-	else {
-		 TweenLite.to(derriere.btn_prise_1, 0.3, {scaleX:1, scaleY:1, alpha:0.4, ease:Bounce.easeOut});
-		 derriere.btn_prise_1.buttonMode = false;		 
-	}	
-}
+
 ////////////////////////////
 //Personnage ///////////////
 ///////////////////////////
@@ -151,6 +129,33 @@ function niveau011(e) {
 	MovieClip(racine).posDevantY=-144.65;
 	MovieClip(racine).posPlayerX=500;
 	MovieClip(racine).posPlayerY=391;
+}
+/////////////////////////////////////////////////////////////
+//Function niveau ///////////////////////////
+/////////////////////////////////////////////////////////////
+function niveau_suivant(e) {
+	if (MovieClip(player.content).player.hit_box.hitTestObject(derriere.suiv)) {						
+		derriere.suiv.y = 1194;
+		MovieClip(racine).chargement.y=0;
+		MovieClip(racine).adresse = new URLRequest("niveau01.3.swf");
+     	MovieClip(racine).chargeur.load(MovieClip(racine).adresse);  	
+	 	MovieClip(racine).reloader(e);			
+		MovieClip(racine).posPlayerX=120;
+		MovieClip(racine).posPlayerY=480;
+		stage.removeEventListener(Event.ENTER_FRAME, Deplacement_fond);
+		stage.removeEventListener(Event.ENTER_FRAME, niveau_suivant);
+	}
+	else{
+		
+		}
+	if(MovieClip(player.content).player.zone_i.hitTestObject(derriere.btn_prise_1)) {
+		  TweenLite.to(derriere.btn_prise_1, 0.3, {scaleX:2, scaleY:2, alpha:0.7, ease:Bounce.easeOut});
+		  derriere.btn_prise_1.buttonMode = true;		
+	}
+	else {
+		 TweenLite.to(derriere.btn_prise_1, 0.3, {scaleX:1, scaleY:1, alpha:0.4, ease:Bounce.easeOut});
+		 derriere.btn_prise_1.buttonMode = false;		 
+	}	
 }
 
 

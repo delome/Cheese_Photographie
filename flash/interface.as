@@ -7,15 +7,28 @@ import com.greensock.easing.*;
 	conteneurSaveXML.load(adresseSaveXML);
 	var SaveXML:XML;
 	conteneurSaveXML.addEventListener(Event.COMPLETE,chargementSaveTermine);
-	conteneurSaveXML.addEventListener(IOErrorEvent.IO_ERROR, onFileSaveError);	
+	conteneurSaveXML.addEventListener(IOErrorEvent.IO_ERROR, onFileSaveError);
+//////////////////////////////////////////////////////////////////////////////////
+//initialisation XML DIALOGUES//////////////////////////////////////////////////////////////
+	var adresseDialoguesXML:URLRequest = new URLRequest("xml/dialogues.xml");
+	var conteneurDialoguesXML:URLLoader = new URLLoader();
+	conteneurDialoguesXML.load(adresseDialoguesXML);
+	var DialoguesXML:XML;
+	conteneurDialoguesXML.addEventListener(Event.COMPLETE,chargementDialoguesTermine);
+	conteneurDialoguesXML.addEventListener(IOErrorEvent.IO_ERROR, onFileSaveError);
 //////////////////////////////////////////////////////////////////////////////////
 //initialisation variable niveau//////////////////////////////////////////////////
-	var posFondX =-785.10;
-	var posFondY =-145.85;
-	var posDevantX =-770.2;
-	var posDevantY =-144.65;
-	var posPlayerX =475;
-	var posPlayerY =391;
+	var posFondX =810.55;
+	var posFondY =300.75;
+	var posDevantX =0;
+	var posDevantY =0;
+	var posPlayerX =450;
+	var posPlayerY =360;
+
+//////////////////////////////////////////////////////////////////////////////////
+///////////////////initialisation variable photo//////////////////////////////////
+var photoOk = false;
+
 	
 //initialisation variable Ilage//////////////////////////////////////////////////
 var maCapture1:BitmapData = new BitmapData(1024,768);
@@ -29,13 +42,18 @@ var maCapture1:BitmapData = new BitmapData(1024,768);
 //////////////////////////////////////////////////////////////////////////////////
 ////Chargement de la sauvegarde /////////////////////////////////////////////////
 function chargementSaveTermine(pEvt:Event):void  {
-		SaveXML = new XML(conteneurSaveXML.data);  
-		trace ("Chargement XML OK");
-		
-	}
-	function onFileSaveError(evt:IOErrorEvent){
-		trace(this, evt);
-		trace ("Chargement XML pas Ok");
+	SaveXML = new XML(conteneurSaveXML.data);  
+	trace ("Chargement XML OK");
+	
+}
+function chargementDialoguesTermine(pEvt:Event):void  {
+	DialoguesXML = new XML(conteneurDialoguesXML.data);  
+	trace ("Chargement XML OK");
+	
+}
+function onFileSaveError(evt:IOErrorEvent){
+	trace(this, evt);
+	trace ("Chargement XML pas Ok");
 }
 //
 
@@ -211,3 +229,7 @@ stage.addEventListener(MouseEvent.MOUSE_MOVE, suivreMouvementSouris);*/
 
 //////////////////////////////////////////////////////////////////////////////////
 
+
+function replace(str, find, replace) {
+	return str.split(find).join(replace);
+}

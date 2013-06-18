@@ -71,6 +71,7 @@ function niveau_suivant(e) {
 		MovieClip(racine).posFondY=300.75;
 		MovieClip(racine).posPlayerX=450;
 		MovieClip(racine).posPlayerY=360;
+		
 	}
 	else{
 		
